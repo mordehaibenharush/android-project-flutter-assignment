@@ -8,6 +8,10 @@ class FirestoreRepository {
 
   FirestoreRepository({this.userId});
 
+  void createUserDoc() {
+    users.doc(userId).set({"saved_suggestions": FieldValue.arrayUnion([])});
+  }
+
   void putSavedWordPair(WordPair pair) {
     users.doc(userId).update({"saved_suggestions": FieldValue.arrayUnion(["${pair.first}_${pair.second}"])});
   }

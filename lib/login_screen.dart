@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:app/authentication.dart';
 import 'package:provider/provider.dart';
-import 'package:app/authiot.dart';
+import 'package:app/firestore.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -63,6 +63,7 @@ class LoginScreen extends StatelessWidget {
                     onPressed: () async {
                       bool isSingedIn = await auth.signIn(usernameController.text, passwordController.text);
                       if (isSingedIn) {
+                        FirestoreRepository(userId: auth.user?.uid).createUserDoc();
                         Navigator.of(context).pop();
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
