@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">357900823890-1n8pfk2laais0gh2lk10c5q0k4i457dr.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">357900823890</string>
+    <string name="google_api_key" translatable="false">AIzaSyBGb_9mZkHe-eYSssP03ftKcLQrDGd4Zww</string>
+    <string name="google_app_id" translatable="false">1:357900823890:android:8990c4a217441cfa0f9e8b</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBGb_9mZkHe-eYSssP03ftKcLQrDGd4Zww</string>
+    <string name="google_storage_bucket" translatable="false">hellome-e5830.appspot.com</string>
+    <string name="project_id" translatable="false">hellome-e5830</string>
+</resources>
