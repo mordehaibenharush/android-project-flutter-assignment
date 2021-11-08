@@ -161,23 +161,20 @@ class _RandomWordsState extends State<RandomWords> {
   }
 
   Widget _buildStreamedSuggestions() {
-    Stream<DocumentSnapshot>? userStream = (Provider.of<AuthRepository>(context, listen: true).status == Status.Authenticated)
-    ? FirebaseFirestore.instance.collection('users').doc(Provider.of<AuthRepository>(context, listen: false).user?.uid).snapshots() : null;
+    Stream<DocumentSnapshot>? userStream = (Provider.of<AuthRepository>(context, listen: true).status == Status.Authenticated) ?
+    FirebaseFirestore.instance.collection('users').doc(Provider.of<AuthRepository>(context, listen: false).user?.uid).snapshots() : null;
     return StreamBuilder<DocumentSnapshot>(
-        stream: userStream,
-        builder: (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+    stream: userStream,
+    builder: (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
           if (snapshot.hasError) {
             return Text('Something went wrong');
           }
-
           if (Provider.of<AuthRepository>(context, listen: true).status == Status.Authenticated)
             snapshot.data!.get('saved_suggestions').forEach((pair_string) {
               print(pair_string);
               WordPair pair = WordPair(pair_string.split('_')[0], pair_string.split('_')[1]);
               if(!_suggestions.contains(pair)) _suggestions.add(pair);
-              print("***");
               if(!_saved.contains(pair)) _saved.add(pair);});
-          print("==================================");
           return _buildSuggestions();}
           );
   }
