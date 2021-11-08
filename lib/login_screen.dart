@@ -61,11 +61,15 @@ class LoginScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20)),
                   child: TextButton(
                     onPressed: () async {
-                      bool isSingedIn = await auth.signIn(usernameController.text, passwordController.text);
-                      if (isSingedIn) {
-                        FirestoreRepository(userId: auth.user?.uid).createUserDoc();
+                      int res = await auth.signIn(usernameController.text, passwordController.text);
+                      if (res == 1) {
+                        UserCredential? uc = await auth.signUp(usernameController.text, passwordController.text);
+                        if (uc != null)
+                          FirestoreRepository(userId: auth.user?.uid).createUserDoc();
+                      }
+                      if (res != -1)
                         Navigator.of(context).pop();
-                      } else {
+                      else {
                         ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: Text('There was an error logging into the app'),));
