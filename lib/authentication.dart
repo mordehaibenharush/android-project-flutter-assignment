@@ -44,6 +44,8 @@ class AuthRepository with ChangeNotifier {
       print(e.code);
       switch (e.code) {
         case 'user-not-found':
+          _status = Status.Unauthenticated;
+          notifyListeners();
           return 1;
           //UserCredential? uc = await signUp(email, password);
           //if (uc != null) return true;
