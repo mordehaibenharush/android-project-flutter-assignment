@@ -73,12 +73,13 @@ class _RandomWordsState extends State<RandomWords> {
   @override
   Widget build(BuildContext context) {
     //final wordPair = WordPair.random();
-    if (Provider.of<AuthRepository>(context, listen: true).status == Status.Authenticated) {
+    /*if (Provider.of<AuthRepository>(context, listen: true).status == Status.Authenticated) {
       firestore = FirestoreRepository(userId: Provider.of<AuthRepository>(context, listen: true).user?.uid);
       //firestore?.putSavedWordPairs(_saved);
     }
     if (Provider.of<AuthRepository>(context, listen: true).status == Status.Unauthenticated)
-      firestore = null;
+      firestore = null;*/
+    firestore = (Provider.of<AuthRepository>(context, listen: true).status == Status.Authenticated) ? FirestoreRepository(userId: Provider.of<AuthRepository>(context, listen: true).user?.uid) : null;
 
     return Consumer<AuthRepository>(builder: (context, auth, child)
     {
@@ -99,9 +100,7 @@ class _RandomWordsState extends State<RandomWords> {
                   ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text('Successfully logged out'),));
-                  setState(() {
-                    _saved.clear();
-                  });
+                  setState(() {_saved.clear();});
                 } else {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => LoginScreen(),))
@@ -139,14 +138,10 @@ class _RandomWordsState extends State<RandomWords> {
         onTap: () {
             if (alreadySaved) {
               firestore?.removeSavedWordPair(pair);
-              //if(auth.status == Status.Unauthenticated)
                 setState(() {_saved.remove(pair);});
-             // else _saved.remove(pair);
             } else {
               firestore?.putSavedWordPair(pair);
-              //if(auth.status == Status.Unauthenticated)
                 setState(() {_saved.add(pair);});
-              //else _saved.add(pair);
             }
         },
       );
@@ -154,32 +149,21 @@ class _RandomWordsState extends State<RandomWords> {
   }
 
   Widget _buildSuggestions() {
-    /*if (Provider.of<AuthRepository>(context, listen: true).status == Status.Authenticated) {
-      setState(() {
-        firestore.syncSavedSuggestions(userID, suggestions, saved)
-      });
-    }*/
-    return Consumer<AuthRepository>(builder: (context, auth, child)
-    {
-      if (auth.status == Status.Authenticated) {
-          //firestore?.syncSavedSuggestions(auth.user?.uid, _suggestions, _saved);
-      }
-      return ListView.builder(
-          padding: const EdgeInsets.all(16),
-          itemBuilder: (BuildContext _context, int i) {
-            if (i.isOdd) {
-              return Divider();
-            }
-            final int index = i ~/ 2;
-            if (index >= _suggestions.length) {
-              _suggestions.addAll(generateWordPairs().take(10));
-            }
-            return _buildRow(_suggestions[index]);
+    return ListView.builder(
+        padding: const EdgeInsets.all(16),
+        itemBuilder: (BuildContext _context, int i) {
+          if (i.isOdd) {
+            return Divider();
           }
-      );
-    });
+          final int index = i ~/ 2;
+          if (index >= _suggestions.length) {
+            _suggestions.addAll(generateWordPairs().take(10));
+          }
+          return _buildRow(_suggestions[index]);
+        }
+    );
   }
-
+/*
   Widget _buildStreamedSuggestions() {
     String? uid;
     if (Provider.of<AuthRepository>(context, listen: true).status == Status.Authenticated) uid = Provider.of<AuthRepository>(context, listen: false).user?.uid;
@@ -201,7 +185,7 @@ class _RandomWordsState extends State<RandomWords> {
           return _buildSuggestions();}
           );
   }
-
+*/
   void _pushedSave(){
     Navigator.of(context).push(
       MaterialPageRoute<void>(
@@ -241,11 +225,6 @@ class _RandomWordsState extends State<RandomWords> {
                       },
                     );
                   },
-                  /*(DismissDirection direction) async {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text('Deletion is not implemented yet'),));
-                  },*/
                   background: Container(
                     color: Colors.deepPurple[300],
                     child: Padding(

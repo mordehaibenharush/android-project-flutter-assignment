@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:app/authentication.dart';
 import 'package:provider/provider.dart';
@@ -61,14 +60,14 @@ class LoginScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20)),
                   child: TextButton(
                     onPressed: () async {
-                      int res = await auth.signIn(usernameController.text, passwordController.text);
+                      bool isSignedIn = await auth.signIn(usernameController.text, passwordController.text);
                       /*if (res == 1) {
                         UserCredential? uc = await auth.signUp(usernameController.text, passwordController.text);
                         if (uc != null)
                           FirestoreRepository(userId: auth.user?.uid).createUserDoc();
                       }*/
-                      if (res == 0) {
-                        List saved = await FirestoreRepository(userId: auth.user?.uid).getSavedSuggestions(auth.user?.uid);
+                      if (isSignedIn) {
+                        List saved = await FirestoreRepository(userId: auth.user?.uid).getSavedWordPairs();
                         Navigator.of(context).pop(saved);
                       }
                       else {

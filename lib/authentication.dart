@@ -27,33 +27,32 @@ class AuthRepository with ChangeNotifier {
       return await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
     } catch (e) {
-      print("*****");
       _status = Status.Unauthenticated;
       notifyListeners();
       return null;
     }
   }
 
-  Future<int> signIn(String email, String password) async {
+  Future<bool> signIn(String email, String password) async {
     try {
       _status = Status.Authenticating;
       notifyListeners();
       await _auth.signInWithEmailAndPassword(email: email, password: password);
-      return 0;
+      return true;
     } on FirebaseAuthException catch (e) {
       print(e.code);
       switch (e.code) {
         case 'user-not-found':
           _status = Status.Unauthenticated;
           notifyListeners();
-          return 1;
+          return false;
           //UserCredential? uc = await signUp(email, password);
           //if (uc != null) return true;
           //break;
       }
       _status = Status.Unauthenticated;
       notifyListeners();
-      return -1;
+      return false;
     }
   }
 
