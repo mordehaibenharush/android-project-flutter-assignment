@@ -6,6 +6,7 @@ import 'package:app/authentication.dart';
 import 'package:provider/provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:app/firestore.dart';
+import 'package:snapping_sheet/snapping_sheet.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -69,6 +70,7 @@ class _RandomWordsState extends State<RandomWords> {
   final _saved = <WordPair>{};
   final _biggerFont = const TextStyle(fontSize: 18);
   FirestoreRepository? firestore;
+  final ScrollController listViewController = new ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -116,7 +118,55 @@ class _RandomWordsState extends State<RandomWords> {
             ),
           ],
         ),
-        body: _buildSuggestions(),
+        body: Stack(
+          children: [
+              _buildSuggestions(),
+              SnappingSheet(
+                lockOverflowDrag: true,
+                snappingPositions: [
+                  SnappingPosition.factor(
+                    positionFactor: 0.0,
+                    snappingCurve: Curves.easeOutExpo,
+                    snappingDuration: Duration(seconds: 1),
+                    grabbingContentOffset: GrabbingContentOffset.top,
+                  ),
+                  SnappingPosition.factor(
+                    snappingCurve: Curves.elasticOut,
+                    snappingDuration: Duration(milliseconds: 1750),
+                    positionFactor: 0.2,
+                  ),
+                  SnappingPosition.factor(
+                    grabbingContentOffset: GrabbingContentOffset.bottom,
+                    snappingCurve: Curves.easeInExpo,
+                    snappingDuration: Duration(seconds: 1),
+                    positionFactor: 1,
+                  ),
+                ],
+                grabbing: GrabbingWidget(),
+                grabbingHeight: 45,
+                sheetAbove: null,
+                sheetBelow: SnappingSheetContent(
+                  draggable: true,
+                  childScrollController: listViewController,
+                  child: Container(
+                    color: Colors.white,
+                    child: ListView.builder(
+                        controller: listViewController,
+                        itemBuilder: (context, index) {
+                          return Container(
+                            margin: EdgeInsets.all(15),
+                            color: Colors.green[200],
+                            height: 100,
+                            child: Center(
+                              child: Text(index.toString()),
+                            ),
+                          );
+                        }),
+                  ),
+                ),
+              ),
+          ],
+        ),
       );
     });
   }
@@ -275,6 +325,40 @@ class _RandomWordsState extends State<RandomWords> {
             body: ListView(children: divided),
           );
         },
+      ),
+    );
+  }
+}
+
+class GrabbingWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+        boxShadow: [
+          BoxShadow(blurRadius: 25, color: Colors.black.withOpacity(0.2)),
+        ],
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+            margin: EdgeInsets.only(top: 20),
+            width: 100,
+            height: 7,
+            decoration: BoxDecoration(
+              color: Colors.grey,
+              borderRadius: BorderRadius.circular(5),
+            ),
+          ),
+          Container(
+            color: Colors.grey[200],
+            height: 2,
+            margin: EdgeInsets.all(15).copyWith(top: 0, bottom: 0),
+          )
+        ],
       ),
     );
   }
