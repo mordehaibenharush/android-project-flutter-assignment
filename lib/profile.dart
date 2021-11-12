@@ -70,6 +70,8 @@ class Avatar extends StatefulWidget {
 
 class _AvatarState extends State<Avatar> {
   final picker = ImagePicker();
+  Image? avatar;
+  String? imageUrl;
   File? _imageFile;
 
   @override
@@ -78,7 +80,11 @@ class _AvatarState extends State<Avatar> {
           children: [
             Padding(padding: EdgeInsets.all(10),
               child: CircleAvatar(maxRadius: 50, backgroundColor: Colors.deepPurple ,
-                child: CircleAvatar(maxRadius: 45, backgroundColor: Colors.grey,)),),
+                //child: CircleAvatar(maxRadius: 45, backgroundColor: Colors.grey,
+                    child: FutureBuilder(
+                      future: FirebaseStorage.instance.ref().child('users/${widget.user.uid}').getDownloadURL(),
+                      builder: (context, AsyncSnapshot<String> url) {return CircleAvatar(maxRadius: 45, backgroundColor: Colors.grey, backgroundImage: NetworkImage(url.data!));}),
+                )),
             Padding(padding: EdgeInsets.all(10),
               child: ElevatedButton(child: Text("upload"),
               onPressed: () async {
@@ -96,25 +102,21 @@ class _AvatarState extends State<Avatar> {
     });
   }
 
-  UploadTask? uploadImage(String destination, File image) {
-    try {
-      final ref = FirebaseStorage.instance.ref(destination);
-
-      return ref.putFile(image);
-    } on FirebaseException catch (_) {
-      return null;
-    }
-  }
-
   Future uploadImageToFirebase(String destination) async {
     String fileName = widget.user.uid;
-    final firebaseStorageRef =
-    FirebaseStorage.instance.ref().child('$destination/$fileName');
+    final firebaseStorageRef = FirebaseStorage.instance.ref().child('$destination/$fileName');
     UploadTask uploadTask = firebaseStorageRef.putFile(_imageFile!);
     TaskSnapshot taskSnapshot = await uploadTask;
     taskSnapshot.ref.getDownloadURL().then(
-          (value) => print("Done: $value"),
+          (value) => setState((){imageUrl = value;}),
     );
+  }
+
+  Future downloadImageFromFirebase(String destination) async {
+    String fileName = widget.user.uid;
+    final firebaseStorageRef = FirebaseStorage.instance.ref().child('$destination/$fileName');
+    firebaseStorageRef.getData().then((value) => setState(() {avatar = Image.memory(value!);}));
+    firebaseStorageRef.getDownloadURL().then((value) => setState(() {imageUrl = value;}));
   }
 }
 
