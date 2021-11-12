@@ -86,10 +86,16 @@ class _AvatarState extends State<Avatar> {
                       builder: (context, AsyncSnapshot<String> url) {return CircleAvatar(maxRadius: 45, backgroundColor: Colors.grey, backgroundImage: NetworkImage(url.data!));}),
                 )),
             Padding(padding: EdgeInsets.all(10),
-              child: ElevatedButton(child: Text("upload"),
-              onPressed: () async {
-                await pickImage().then((value) => uploadImageToFirebase('users'));
-              }),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Padding(padding: EdgeInsets.all(10), child: Text("${widget.user.email}", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),)),
+                    ElevatedButton(child: Text("change avatar",), style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
+                  onPressed: () async {
+                    await pickImage().then((value) => uploadImageToFirebase('users'));
+                  }),],
+                ),
+              ),
             ),
       ]);
   }
