@@ -6,14 +6,19 @@ INJECTED from C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\android\app\src\ma
 INJECTED from C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\android\app\src\main\AndroidManifest.xml:1:1-41:12
 MERGED from C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\android\app\src\main\AndroidManifest.xml:1:1-41:12
 MERGED from [:firebase_auth] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
+MERGED from [:firebase_storage] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:cloud_firestore] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
+MERGED from [:image_picker] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-19:12
+MERGED from [:flutter_plugin_android_lifecycle] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\a20be4a04e20a7650c7478728658bc1e\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\39226147107c07d612c0b5c242740fda\jetified-firebase-auth-21.0.1\AndroidManifest.xml:17:1-83:12
 MERGED from [com.google.firebase:firebase-firestore:24.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\3c1065e8c5fa4d3c08ca57e45fe34cc3\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\1b1da317e75d1e5f9a3fdb04d44a433f\jetified-firebase-storage-20.0.0\AndroidManifest.xml:15:1-39:12
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\a0b1676d125f34f1f97c3995e6fcde9f\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta02] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\8fb59f90ba6407771732a627b3de3c2c\jetified-firebase-appcheck-interop-16.0.0-beta02\AndroidManifest.xml:15:1-26:12
 MERGED from [com.google.firebase:firebase-common:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\3302300f084732ea1b649fcba8a3ed24\jetified-firebase-common-20.0.0\AndroidManifest.xml:15:1-40:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\26f41bb46c39620ddaf68d1901acb8cb\exifinterface-1.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\a259cc2533c3f82706c94c31ad6608cd\jetified-play-services-auth-api-phone-17.4.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\dd341317ee0c836f3e714a8533ea18e1\jetified-play-services-safetynet-17.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-database-collection:18.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\4e743f6562e86b8e612b0b4019ecb071\jetified-firebase-database-collection-18.0.0\AndroidManifest.xml:2:1-9:12
@@ -70,14 +75,20 @@ application
 ADDED from C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\android\app\src\main\AndroidManifest.xml:3:4-40:19
 MERGED from [:firebase_auth] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_auth] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_storage] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_storage] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:cloud_firestore] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:cloud_firestore] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_core] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_core] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
+MERGED from [:image_picker] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-17:19
+MERGED from [:image_picker] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-17:19
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\39226147107c07d612c0b5c242740fda\jetified-firebase-auth-21.0.1\AndroidManifest.xml:26:5-81:19
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\39226147107c07d612c0b5c242740fda\jetified-firebase-auth-21.0.1\AndroidManifest.xml:26:5-81:19
 MERGED from [com.google.firebase:firebase-firestore:24.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\3c1065e8c5fa4d3c08ca57e45fe34cc3\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:16:5-24:19
 MERGED from [com.google.firebase:firebase-firestore:24.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\3c1065e8c5fa4d3c08ca57e45fe34cc3\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:16:5-24:19
+MERGED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\1b1da317e75d1e5f9a3fdb04d44a433f\jetified-firebase-storage-20.0.0\AndroidManifest.xml:29:5-37:19
+MERGED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\1b1da317e75d1e5f9a3fdb04d44a433f\jetified-firebase-storage-20.0.0\AndroidManifest.xml:29:5-37:19
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\a0b1676d125f34f1f97c3995e6fcde9f\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\a0b1676d125f34f1f97c3995e6fcde9f\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta02] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\8fb59f90ba6407771732a627b3de3c2c\jetified-firebase-appcheck-interop-16.0.0-beta02\AndroidManifest.xml:24:5-20
@@ -150,22 +161,32 @@ INJECTED from C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\android\app\src\ma
 INJECTED from C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\android\app\src\main\AndroidManifest.xml
 MERGED from [:firebase_auth] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_auth] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_storage] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_storage] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:cloud_firestore] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:cloud_firestore] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:image_picker] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:image_picker] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\a20be4a04e20a7650c7478728658bc1e\multidex-2.0.0\AndroidManifest.xml:20:5-43
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\a20be4a04e20a7650c7478728658bc1e\multidex-2.0.0\AndroidManifest.xml:20:5-43
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\39226147107c07d612c0b5c242740fda\jetified-firebase-auth-21.0.1\AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\39226147107c07d612c0b5c242740fda\jetified-firebase-auth-21.0.1\AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-firestore:24.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\3c1065e8c5fa4d3c08ca57e45fe34cc3\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-firestore:24.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\3c1065e8c5fa4d3c08ca57e45fe34cc3\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\1b1da317e75d1e5f9a3fdb04d44a433f\jetified-firebase-storage-20.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\1b1da317e75d1e5f9a3fdb04d44a433f\jetified-firebase-storage-20.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\a0b1676d125f34f1f97c3995e6fcde9f\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\a0b1676d125f34f1f97c3995e6fcde9f\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta02] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\8fb59f90ba6407771732a627b3de3c2c\jetified-firebase-appcheck-interop-16.0.0-beta02\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta02] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\8fb59f90ba6407771732a627b3de3c2c\jetified-firebase-appcheck-interop-16.0.0-beta02\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-common:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\3302300f084732ea1b649fcba8a3ed24\jetified-firebase-common-20.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-common:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\3302300f084732ea1b649fcba8a3ed24\jetified-firebase-common-20.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\26f41bb46c39620ddaf68d1901acb8cb\exifinterface-1.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\26f41bb46c39620ddaf68d1901acb8cb\exifinterface-1.3.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\a259cc2533c3f82706c94c31ad6608cd\jetified-play-services-auth-api-phone-17.4.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\a259cc2533c3f82706c94c31ad6608cd\jetified-play-services-auth-api-phone-17.4.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\dd341317ee0c836f3e714a8533ea18e1\jetified-play-services-safetynet-17.0.0\AndroidManifest.xml:20:5-44
@@ -250,10 +271,14 @@ MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\DELL-PC\.gradle\
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\39226147107c07d612c0b5c242740fda\jetified-firebase-auth-21.0.1\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-firestore:24.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\3c1065e8c5fa4d3c08ca57e45fe34cc3\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:14:5-67
 MERGED from [com.google.firebase:firebase-firestore:24.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\3c1065e8c5fa4d3c08ca57e45fe34cc3\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:14:5-67
+MERGED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\1b1da317e75d1e5f9a3fdb04d44a433f\jetified-firebase-storage-20.0.0\AndroidManifest.xml:27:5-67
+MERGED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\1b1da317e75d1e5f9a3fdb04d44a433f\jetified-firebase-storage-20.0.0\AndroidManifest.xml:27:5-67
 	android:name
 		ADDED from C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\android\app\src\debug\AndroidManifest.xml:6:22-64
 service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [:firebase_auth] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_storage] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_storage] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [:cloud_firestore] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [:cloud_firestore] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_core] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
@@ -262,6 +287,8 @@ MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\DELL-PC\.gradle\
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\39226147107c07d612c0b5c242740fda\jetified-firebase-auth-21.0.1\AndroidManifest.xml:74:9-80:19
 MERGED from [com.google.firebase:firebase-firestore:24.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\3c1065e8c5fa4d3c08ca57e45fe34cc3\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:17:9-23:19
 MERGED from [com.google.firebase:firebase-firestore:24.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\3c1065e8c5fa4d3c08ca57e45fe34cc3\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:17:9-23:19
+MERGED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\1b1da317e75d1e5f9a3fdb04d44a433f\jetified-firebase-storage-20.0.0\AndroidManifest.xml:30:9-36:19
+MERGED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\1b1da317e75d1e5f9a3fdb04d44a433f\jetified-firebase-storage-20.0.0\AndroidManifest.xml:30:9-36:19
 MERGED from [com.google.firebase:firebase-common:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\3302300f084732ea1b649fcba8a3ed24\jetified-firebase-common-20.0.0\AndroidManifest.xml:33:9-37:35
 MERGED from [com.google.firebase:firebase-common:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\3302300f084732ea1b649fcba8a3ed24\jetified-firebase-common-20.0.0\AndroidManifest.xml:33:9-37:35
 	android:exported
@@ -278,6 +305,12 @@ ADDED from [:firebase_auth] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\buil
 		ADDED from [:firebase_auth] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 	android:name
 		ADDED from [:firebase_auth] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar
+ADDED from [:firebase_storage] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+	android:value
+		ADDED from [:firebase_storage] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+	android:name
+		ADDED from [:firebase_storage] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-126
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar
 ADDED from [:cloud_firestore] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 	android:value
@@ -290,10 +323,28 @@ ADDED from [:firebase_core] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\buil
 		ADDED from [:firebase_core] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 	android:name
 		ADDED from [:firebase_core] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+provider#io.flutter.plugins.imagepicker.ImagePickerFileProvider
+ADDED from [:image_picker] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-16:20
+	android:grantUriPermissions
+		ADDED from [:image_picker] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-47
+	android:authorities
+		ADDED from [:image_picker] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-74
+	android:exported
+		ADDED from [:image_picker] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
+	android:name
+		ADDED from [:image_picker] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-82
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:image_picker] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-15:75
+	android:resource
+		ADDED from [:image_picker] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-72
+	android:name
+		ADDED from [:image_picker] C:\Users\DELL-PC\Desktop\GitHub\android_dev\app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-67
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\39226147107c07d612c0b5c242740fda\jetified-firebase-auth-21.0.1\AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-firestore:24.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\3c1065e8c5fa4d3c08ca57e45fe34cc3\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:13:5-79
 MERGED from [com.google.firebase:firebase-firestore:24.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\3c1065e8c5fa4d3c08ca57e45fe34cc3\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:13:5-79
+MERGED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\1b1da317e75d1e5f9a3fdb04d44a433f\jetified-firebase-storage-20.0.0\AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\1b1da317e75d1e5f9a3fdb04d44a433f\jetified-firebase-storage-20.0.0\AndroidManifest.xml:26:5-79
 MERGED from [io.grpc:grpc-android:1.41.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\7953a435a45949d0bf5a80b9080a9ac7\jetified-grpc-android-1.41.0\AndroidManifest.xml:11:5-79
 MERGED from [io.grpc:grpc-android:1.41.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\7953a435a45949d0bf5a80b9080a9ac7\jetified-grpc-android-1.41.0\AndroidManifest.xml:11:5-79
 	android:name
@@ -372,6 +423,12 @@ ADDED from [com.google.firebase:firebase-firestore:24.0.0] C:\Users\DELL-PC\.gra
 		ADDED from [com.google.firebase:firebase-firestore:24.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\3c1065e8c5fa4d3c08ca57e45fe34cc3\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:22:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-firestore:24.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\3c1065e8c5fa4d3c08ca57e45fe34cc3\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:21:17-111
+meta-data#com.google.firebase.components:com.google.firebase.storage.StorageRegistrar
+ADDED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\1b1da317e75d1e5f9a3fdb04d44a433f\jetified-firebase-storage-20.0.0\AndroidManifest.xml:33:13-35:85
+	android:value
+		ADDED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\1b1da317e75d1e5f9a3fdb04d44a433f\jetified-firebase-storage-20.0.0\AndroidManifest.xml:35:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\1b1da317e75d1e5f9a3fdb04d44a433f\jetified-firebase-storage-20.0.0\AndroidManifest.xml:34:17-107
 provider#com.google.firebase.provider.FirebaseInitProvider
 ADDED from [com.google.firebase:firebase-common:20.0.0] C:\Users\DELL-PC\.gradle\caches\transforms-2\files-2.1\3302300f084732ea1b649fcba8a3ed24\jetified-firebase-common-20.0.0\AndroidManifest.xml:26:9-31:39
 	android:authorities
