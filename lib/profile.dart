@@ -83,7 +83,7 @@ class _AvatarState extends State<Avatar> {
                 //child: CircleAvatar(maxRadius: 45, backgroundColor: Colors.grey,
                     child: FutureBuilder(
                       future: FirebaseStorage.instance.ref().child('users/${widget.user.uid}').getDownloadURL(),
-                      builder: (context, AsyncSnapshot<String> url) {return CircleAvatar(maxRadius: 45, backgroundColor: Colors.grey, backgroundImage: NetworkImage(url.data!));}),
+                      builder: (context, AsyncSnapshot<String> url) {return CircleAvatar(maxRadius: 45, backgroundColor: Colors.grey, backgroundImage: (url.data != null) ? NetworkImage(url.data!) : null);}),
                 )),
             Padding(padding: EdgeInsets.all(10),
               child: SingleChildScrollView(
@@ -92,7 +92,15 @@ class _AvatarState extends State<Avatar> {
                     Padding(padding: EdgeInsets.all(10), child: Text("${widget.user.email}", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),)),
                     ElevatedButton(child: Text("change avatar",), style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
                   onPressed: () async {
-                    await pickImage().then((value) => uploadImageToFirebase('users'));
+                    await pickImage().then((value) {
+                      if (_imageFile != null)
+                        uploadImageToFirebase('users');
+                      else
+                        ScaffoldMessenger.of(context)
+                            .showSnackBar(
+                            SnackBar(
+                              content: Text('No image selected'),));
+                    });
                   }),],
                 ),
               ),

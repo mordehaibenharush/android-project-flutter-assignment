@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:app/authentication.dart';
 import 'package:provider/provider.dart';
@@ -34,7 +35,8 @@ class LoginScreen extends StatelessWidget {
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'User Name',
-                      hintText: 'Enter your user name'
+                      hintText: 'Enter your user name',
+                      labelStyle: TextStyle(color: Colors.deepPurple),
                   ),
                 ),
               ),
@@ -46,7 +48,8 @@ class LoginScreen extends StatelessWidget {
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Password',
-                      hintText: 'Enter your password'
+                      hintText: 'Enter your password',
+                      labelStyle: TextStyle(color: Colors.deepPurple),
                   ),
                 ),
               ),
@@ -80,6 +83,105 @@ class LoginScreen extends StatelessWidget {
                     Text(
                       'Login',
                       style: TextStyle(color: Colors.white, fontSize: 25),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 5),
+                child: Container(
+                  height: 30,
+                  width: 230,
+                  child: Center(
+                    child: GestureDetector(
+                      onTap: () async {
+                        final TextEditingController confirmPasswordController = TextEditingController();
+                        return showModalBottomSheet(context: context, builder: (context) {
+                          return Container(
+                            height: 200,
+                            child:
+                              Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(10),
+                                    child: Text("Please confirm your password below:"),
+                                  ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 15, right: 10, left: 10),
+                                child: TextField(
+                                  controller: confirmPasswordController,
+                                  obscureText: true,
+                                  decoration: InputDecoration(
+                                      border: OutlineInputBorder(),
+                                      labelText: 'Password',
+                                      hintText: 'Re-enter your password',
+                                      labelStyle: TextStyle(color: Colors.deepPurple),
+                                      errorText: (confirmPasswordController.text == passwordController.text) ? null :'Passwords must match',
+                                      errorStyle: TextStyle(color: Colors.deepPurple),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(10),
+                                child: ElevatedButton(onPressed: () async {
+                                  if (confirmPasswordController.text == passwordController.text) {
+                                    UserCredential? userCredential = await auth
+                                        .signUp(usernameController.text,
+                                        passwordController.text);
+                                    if (userCredential != null) {
+                                      List saved = await FirestoreRepository(
+                                          userId: auth.user?.uid)
+                                          .getSavedWordPairs();
+                                      Navigator.pop(context);
+                                      Navigator.of(context).pop(saved);
+                                    }
+                                    else {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                          SnackBar(
+                                            content: Text('There was an error registering into the app'),));
+                                    }
+                                  }
+                                },
+                                    child: Text("Confirm", style: TextStyle(),),
+                                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple))),
+                              )
+                              ],)
+                            /*Row(
+                              children: [
+                                Text("Please confirm your password below:"),
+                                TextField(
+                                  controller: confirmPasswordController,
+                                  obscureText: true,
+                                  decoration: InputDecoration(
+                                      border: OutlineInputBorder(),
+                                      labelText: 'Password',
+                                      hintText: 'Re-enter your password'
+                                  ),
+                                ),
+                                ElevatedButton(onPressed: () async {
+                                  UserCredential? userCredential = await auth.signUp(usernameController.text, passwordController.text);
+                                  if (userCredential != null) {
+                                    List saved = await FirestoreRepository(userId: auth.user?.uid).getSavedWordPairs();
+                                    Navigator.of(context).pop(saved);
+                                  }
+                                  else {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                        SnackBar(
+                                          content: Text('There was an error registering into the app'),));
+                                  }
+                                },
+                                    child: Text("Confirm", style: TextStyle(),))
+                              ],
+                            ),*/
+                          );
+                        });},
+                      child: Text(
+                        'New user? Click to sign up',
+                        style: TextStyle(color: Colors.red, fontSize: 15),
+                      ),
                     ),
                   ),
                 ),
