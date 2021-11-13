@@ -98,7 +98,7 @@ class LoginScreen extends StatelessWidget {
                         final TextEditingController confirmPasswordController = TextEditingController();
                         return showModalBottomSheet(context: context, builder: (context) {
                           return Container(
-                            height: 200,
+                            height: 300,
                             child:
                               Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -149,33 +149,6 @@ class LoginScreen extends StatelessWidget {
                                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple))),
                               )
                               ],)
-                            /*Row(
-                              children: [
-                                Text("Please confirm your password below:"),
-                                TextField(
-                                  controller: confirmPasswordController,
-                                  obscureText: true,
-                                  decoration: InputDecoration(
-                                      border: OutlineInputBorder(),
-                                      labelText: 'Password',
-                                      hintText: 'Re-enter your password'
-                                  ),
-                                ),
-                                ElevatedButton(onPressed: () async {
-                                  UserCredential? userCredential = await auth.signUp(usernameController.text, passwordController.text);
-                                  if (userCredential != null) {
-                                    List saved = await FirestoreRepository(userId: auth.user?.uid).getSavedWordPairs();
-                                    Navigator.of(context).pop(saved);
-                                  }
-                                  else {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                        SnackBar(
-                                          content: Text('There was an error registering into the app'),));
-                                  }
-                                },
-                                    child: Text("Confirm", style: TextStyle(),))
-                              ],
-                            ),*/
                           );
                         });},
                       child: Text(

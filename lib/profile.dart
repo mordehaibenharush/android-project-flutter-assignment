@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -6,57 +7,68 @@ import 'package:snapping_sheet/snapping_sheet.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
 
-class ProfileSheet extends StatelessWidget {
+class ProfileSheet extends StatefulWidget {
   ProfileSheet({Key? key, required this.user}) : super(key: key);
   User user;
+
+  @override
+  State<ProfileSheet> createState() => _ProfileSheetState();
+}
+
+class _ProfileSheetState extends State<ProfileSheet> {
   final sheetController = SnappingSheetController();
+  List<SnappingPosition> positionsList = [
+    SnappingPosition.factor(
+      positionFactor: 0.0,
+      snappingCurve: Curves.easeOutExpo,
+      snappingDuration: Duration(seconds: 1),
+      grabbingContentOffset: GrabbingContentOffset.top,
+    ),
+    SnappingPosition.factor(
+      snappingCurve: Curves.elasticOut,
+      snappingDuration: Duration(milliseconds: 1750),
+      positionFactor: 0.25,
+    ),
+    SnappingPosition.factor(
+      grabbingContentOffset: GrabbingContentOffset.bottom,
+      snappingCurve: Curves.easeInExpo,
+      snappingDuration: Duration(seconds: 1),
+      positionFactor: 1,
+    ),
+  ];
+  bool blur = false;
 
   @override
   Widget build(BuildContext context) {
-    return SnappingSheet(
-      controller: sheetController,
-      lockOverflowDrag: true,
-      snappingPositions: [
-        SnappingPosition.factor(
-          positionFactor: 0.0,
-          snappingCurve: Curves.easeOutExpo,
-          snappingDuration: Duration(seconds: 1),
-          grabbingContentOffset: GrabbingContentOffset.top,
+    return BackdropFilter(
+      filter: ImageFilter.blur(sigmaX: (blur) ? 5.0 : 0, sigmaY: (blur) ? 5.0 : 0,),
+      child: SnappingSheet(
+        controller: sheetController,
+        lockOverflowDrag: true,
+        snappingPositions: positionsList,
+        onSheetMoved: (sheetPosition) {setState(() {blur = (sheetPosition.pixels > 30);});},
+        onSnapCompleted: (sheetPosition, snappingPosition) {setState(() {blur = (snappingPosition != positionsList[0]);});},
+        grabbing: GestureDetector(
+          onTap: () {
+            if (sheetController.isAttached) {
+              sheetController.snapToPosition(positionsList[1],);
+            }
+          },
+          child: GrabbingWidget(
+            user: widget.user,
+            onTapFunc: () {},
+          ),
         ),
-        SnappingPosition.factor(
-          snappingCurve: Curves.elasticOut,
-          snappingDuration: Duration(milliseconds: 1750),
-          positionFactor: 0.25,
+        grabbingHeight: 50,
+        sheetBelow: SnappingSheetContent(
+          draggable: true,
+          child: Container(
+            color: Colors.white,
+            child: Avatar(user: widget.user),
+            )//CircleAvatar(child: Avatar(user: user), maxRadius: 1)
+          ),
         ),
-        SnappingPosition.factor(
-          grabbingContentOffset: GrabbingContentOffset.bottom,
-          snappingCurve: Curves.easeInExpo,
-          snappingDuration: Duration(seconds: 1),
-          positionFactor: 1,
-        ),
-      ],
-      grabbing: GestureDetector(
-        onTap: () {
-          if (sheetController.isAttached) {
-            sheetController.snapToPosition(
-              SnappingPosition.factor(positionFactor: 0.75),
-            );
-          }
-        },
-        child: GrabbingWidget(
-          user: user,
-          onTapFunc: () {},
-        ),
-      ),
-      grabbingHeight: 50,
-      sheetBelow: SnappingSheetContent(
-        draggable: true,
-        child: Container(
-          color: Colors.white,
-          child: Avatar(user: user),
-          )//CircleAvatar(child: Avatar(user: user), maxRadius: 1)
-        ),
-      );
+    );
     }
 }
 
@@ -110,10 +122,8 @@ class _AvatarState extends State<Avatar> {
 
   Future pickImage() async {
     final pickedFile = await picker.pickImage(source: ImageSource.gallery);
-
-    setState(() {
-      _imageFile = File(pickedFile!.path);
-    });
+    if (pickedFile?.path != null)
+      setState(() {_imageFile = File(pickedFile!.path);});
   }
 
   Future uploadImageToFirebase(String destination) async {
