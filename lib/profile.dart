@@ -46,7 +46,9 @@ class _ProfileSheetState extends State<ProfileSheet> {
         controller: sheetController,
         lockOverflowDrag: true,
         snappingPositions: positionsList,
-        onSheetMoved: (sheetPosition) {setState(() {blur = (sheetPosition.pixels > 30);});},
+        onSheetMoved: (sheetPosition) {
+          if ((sheetPosition.pixels > 30) && (blur == false)) setState(() {blur = true;});
+          if ((sheetPosition.pixels <= 30) && (blur == true)) setState(() {blur = false;});},
         onSnapCompleted: (sheetPosition, snappingPosition) {setState(() {blur = (snappingPosition != positionsList[0]);});},
         grabbing: GestureDetector(
           onTap: () {
