@@ -4,7 +4,6 @@ import 'package:app/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:app/authentication.dart';
 import 'package:provider/provider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:app/firestore.dart';
 import 'package:snapping_sheet/snapping_sheet.dart';
 import 'package:app/profile.dart';
@@ -83,14 +82,7 @@ class _RandomWordsState extends State<RandomWords> {
       firestore = null;*/
     firestore = (Provider.of<AuthRepository>(context, listen: true).status == Status.Authenticated) ? FirestoreRepository(userId: Provider.of<AuthRepository>(context, listen: true).user?.uid) : null;
     final sheetController = SnappingSheetController();
-    Function snapToPosition = () {
-      print("****************");
-      if(sheetController.isAttached) {
-        print("VOLUNTEASYYYYYYYYYYYYYYYYYYYYY");
-        sheetController.snapToPosition(
-          SnappingPosition.factor(positionFactor: 0.75),);
-      }
-    };
+
     return Consumer<AuthRepository>(builder: (context, auth, child)
     {
       return Scaffold( // Add from here...

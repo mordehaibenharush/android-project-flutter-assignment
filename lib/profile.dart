@@ -51,7 +51,10 @@ class _ProfileSheetState extends State<ProfileSheet> {
         grabbing: GestureDetector(
           onTap: () {
             if (sheetController.isAttached) {
-              sheetController.snapToPosition(positionsList[1],);
+              if (sheetController.currentSnappingPosition == positionsList[0])
+                sheetController.snapToPosition(positionsList[1],);
+              else
+                sheetController.snapToPosition(positionsList[0],);
             }
           },
           child: GrabbingWidget(
@@ -65,7 +68,7 @@ class _ProfileSheetState extends State<ProfileSheet> {
           child: Container(
             color: Colors.white,
             child: Avatar(user: widget.user),
-            )//CircleAvatar(child: Avatar(user: user), maxRadius: 1)
+            )//CircleAvatar
           ),
         ),
     );
